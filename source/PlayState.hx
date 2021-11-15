@@ -172,7 +172,7 @@ class PlayState extends MusicBeatState
 
 	var botplaySine:Float = 0;
 	var botplayTxt:FlxText;
-	var watermark:FlxText
+	var watermark:FlxText;
 
 
 	public var iconP1:HealthIcon;
