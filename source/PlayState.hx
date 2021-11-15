@@ -914,6 +914,13 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.downScroll) {
 			botplayTxt.y = timeBarBG.y - 78;
 		}
+	
+	        watermark = new FlxText(0, healthBarBG.y + 36,  FlxG.width, "PORTED BY LEMU", 20);
+                watermark.setFormat(Paths.font("vcr.ttf"), 32,  FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+                watermark.scrollFactor.set();
+                watermark.borderSize = 1.25;
+                watermark.visible = !ClientPrefs.hideHud;
+                add(watermark);
 
 		strumLineNotes.cameras = [camHUD];
 		grpNoteSplashes.cameras = [camHUD];
@@ -928,6 +935,7 @@ class PlayState extends MusicBeatState
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
+	        watermark.cameras = [camHud];
 
 		#if mobileC
 			mcontrols = new Mobilecontrols();
@@ -4186,9 +4194,4 @@ class PlayState extends MusicBeatState
 	var curLight:Int = 0;
 	var curLightEvent:Int = 0;
 }
-watermark = new FlxText(0, healthBarBG.y + 36,  FlxG.width, "PORTED BY LEMU", 20);
-watermark.setFormat(Paths.font("vcr.ttf"), 32,  FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-watermark.scrollFactor.set();
-watermark.borderSize = 1.25;
-watermark.visible = !ClientPrefs.hideHud;
-add(watermark);
+
